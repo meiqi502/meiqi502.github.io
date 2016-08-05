@@ -98,7 +98,7 @@
 一、环境nodejsgit
 二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io
 三">
-<meta property="og:updated_time" content="2016-08-05T09:54:39.222Z">
+<meta property="og:updated_time" content="2016-08-05T11:34:16.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="hexo搭建博客并发布到github过程记录标签（空格分隔）： hexo github
@@ -186,7 +186,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Home
           </a>
         </li>
       
@@ -196,7 +196,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -259,7 +259,7 @@
             <span class="post-meta-item-icon">
               <i class="fa fa-calendar-o"></i>
             </span>
-            <span class="post-meta-item-text">Veröffentlicht am</span>
+            <span class="post-meta-item-text">Posted on</span>
             <time itemprop="dateCreated" datetime="2016-08-05T17:54:58+08:00" content="2016-08-05">
               2016-08-05
             </time>
@@ -300,11 +300,25 @@
 <h3 id="三、安装hexo"><a href="#三、安装hexo" class="headerlink" title="三、安装hexo"></a>三、安装hexo</h3><p>1、 打开git bash，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo // 全局安装hexo</div></pre></td></tr></table></figure></p>
 <p>2、 本地新建文件夹，比如新建hexo，路径为D：/hexo；<br>3、 进入D:/hexo，右键git bash，并输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init // 初始化hexo</div></pre></td></tr></table></figure></p>
 <p>这时候打开hexo文件夹会发现所有站点相关的文件都已经被下载下来。<br>输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
-<p>浏览器打开 <a href="http://localhost:4000,可以看到本地hexo博客的样子。（ps：如果本地的4000端口被占用了，可以输入" target="_blank" rel="external">http://localhost:4000,可以看到本地hexo博客的样子。（ps：如果本地的4000端口被占用了，可以输入</a> hexo s -p 5000 来修改端口号。据说如果本地安装了福昕阅读器都会有这个问题）。<br>4、 本地的站点已经准备好，接下来就是把这个站点发布到github上。打开D:/hexo/_config.yml（不要用记事本打开，编码问题），在文件末尾配置deploy信息，具体如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://username:password@github.com/meiqi502/meiqi502.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<p>浏览器打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> ,可以看到本地hexo博客的样子。（ps：如果本地的4000端口被占用了，可以输入 hexo s -p 5000 来修改端口号。据说如果本地安装了福昕阅读器都会有这个问题）。<br>4、 本地的站点已经准备好，接下来就是把这个站点发布到github上。打开D:/hexo/_config.yml（不要用记事本打开，编码问题），在文件末尾配置deploy信息，具体如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repository: https://username:password@github.com/meiqi502/meiqi502.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
 <p>ps：username是github帐户名，password是github密码。我的hexo版本是3.0，这个配置信息会因为版本不同而稍有区别。具体视版本而定。<br>5、安装hexo部署器，据说（hexo 3.0版本之前的不需要，没看过官方文档的我没发言权）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
-<p>6、再次执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
-<p>然后，浏览器打开<a href="http://meiqi502.github.io可以看到博客啦。（ps：github在国内的访问速度不是很快，有时候立即访问可能会报错或者网页崩溃。。。（苦脸，被这个坑过））。所以要耐心等待一下。" target="_blank" rel="external">http://meiqi502.github.io可以看到博客啦。（ps：github在国内的访问速度不是很快，有时候立即访问可能会报错或者网页崩溃。。。（苦脸，被这个坑过））。所以要耐心等待一下。</a></p>
-
+<p>6、执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>然后，浏览器打开 <a href="http://meiqi502.github.io" target="_blank" rel="external">http://meiqi502.github.io</a> 可以看到博客啦。（ps：github在国内的访问速度不是很快，有时候立即访问可能会报错或者网页崩溃。。。（苦脸，被这个坑过））。所以要耐心等待一下。</p>
+<h3 id="四、写博文"><a href="#四、写博文" class="headerlink" title="四、写博文"></a>四、写博文</h3><p>博客搭建好之后就可以开始发布文章了，hexo使用markdown编写方式。所以首先要准备一个好用的markdown编辑器，这里推荐一个自己用的：cmd markdown；这个有客户端也有在线版，非常好用。<br>在线版本：<a href="https://www.zybuluo.com/mdeditor_light#459840" target="_blank" rel="external">https://www.zybuluo.com/mdeditor_light#459840</a><br>客户端下载：<a href="https://www.zybuluo.com/cmd/" target="_blank" rel="external">https://www.zybuluo.com/cmd/</a><br>找到hexo/source/_post；在里面新建md，然后在md编辑器打开并编辑文章。保存后，进入hexo根目录，执行：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure></p>
+<p>对，就是这两个命令，也许你已经知道每次要部署的时候就执行这两个命令就行了。。。。（哈哈，你真聪明）。这时候在浏览器上就可以看到你发表的文章啦。</p>
+<h3 id="五、主题切换"><a href="#五、主题切换" class="headerlink" title="五、主题切换"></a>五、主题切换</h3><p>hexo有很多主题，很多非常优秀的开发者都在github上贡献了自己的作品，你可以尽情筛选，选择自己中意的主题。<br>hexo主题链接：<a href="https://github.com/hexojs/hexo/wiki/Themes" target="_blank" rel="external">https://github.com/hexojs/hexo/wiki/Themes</a><br>那么选择中意的主题之后怎么运用到自己的博客呢？方法很简单：</p>
+<ul>
+<li>把主题克隆到本地hexo站点：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone &lt;repository&gt; themes/&lt;theme-name&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>举个例子，我使用的主题的git仓库地址是：<a href="https://github.com/iissnan/hexo-theme-next.git，那么就这么写：" target="_blank" rel="external">https://github.com/iissnan/hexo-theme-next.git，那么就这么写：</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone https://github.com/iissnan/hexo-theme-next.git themes/next</div></pre></td></tr></table></figure></p>
+<ul>
+<li>配置_config.yml文件的themes选项<br>在配置文件_config.yml中找到themes字段，然后修改成我们想要的主题的名字，比如next，然后，你懂的，再次执行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo d</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>然后刷新浏览器，你会发现主题已经成功切换了哦。</p>
+<h3 id="六、主题的修改和优化"><a href="#六、主题的修改和优化" class="headerlink" title="六、主题的修改和优化"></a>六、主题的修改和优化</h3><p>开发中……</p>
+<h3 id="七、hexo的一些相关命令"><a href="#七、hexo的一些相关命令" class="headerlink" title="七、hexo的一些相关命令"></a>七、hexo的一些相关命令</h3><h3 id="八、"><a href="#八、" class="headerlink" title="八、"></a>八、</h3>
       
     </div>
 
@@ -384,10 +398,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Overview
           </li>
         </ul>
       
@@ -404,7 +418,7 @@
           <div class="site-state-item site-state-posts">
             <a href="/archives">
               <span class="site-state-item-count">2</span>
-              <span class="site-state-item-name">Artikel</span>
+              <span class="site-state-item-name">posts</span>
             </a>
           </div>
 
@@ -435,7 +449,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo搭建博客并发布到github过程记录"><span class="nav-number">1.</span> <span class="nav-text">hexo搭建博客并发布到github过程记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、环境"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、注册git，并新建repository"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、注册git，并新建repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、创建本机的SSH和github配置"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、创建本机的SSH和github配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、安装hexo"><span class="nav-number">1.0.4.</span> <span class="nav-text">三、安装hexo</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo搭建博客并发布到github过程记录"><span class="nav-number">1.</span> <span class="nav-text">hexo搭建博客并发布到github过程记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、环境"><span class="nav-number">1.0.1.</span> <span class="nav-text">一、环境</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、注册git，并新建repository"><span class="nav-number">1.0.2.</span> <span class="nav-text">二、注册git，并新建repository</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、创建本机的SSH和github配置"><span class="nav-number">1.0.3.</span> <span class="nav-text">三、创建本机的SSH和github配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、安装hexo"><span class="nav-number">1.0.4.</span> <span class="nav-text">三、安装hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、写博文"><span class="nav-number">1.0.5.</span> <span class="nav-text">四、写博文</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、主题切换"><span class="nav-number">1.0.6.</span> <span class="nav-text">五、主题切换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#六、主题的修改和优化"><span class="nav-number">1.0.7.</span> <span class="nav-text">六、主题的修改和优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#七、hexo的一些相关命令"><span class="nav-number">1.0.8.</span> <span class="nav-text">七、hexo的一些相关命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#八、"><span class="nav-number">1.0.9.</span> <span class="nav-text">八、</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
         </section>
@@ -462,7 +476,7 @@
 </div>
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
