@@ -268,6 +268,107 @@
             
               
                 
+                <a class="post-title-link" href="/2016/08/07/解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限/" itemprop="url">
+                  解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-08-07T17:37:30+08:00" content="2016-08-07">
+              2016-08-07
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <pre><code>初学wordpress，憧憬着给自己建一个漂亮的个人博客；于是在SAE上申请了个域名，就把wordpress4.0搭建上去了，通过SVN将主题上传后就开始琢磨着写点文章加点图片啥的，然后问题就来了。想在wordpress后台添加图片的时候，报错：“无法建立目录 wp-content/uploads/2014/11。有没有上级目录的写权限？”于是就去百度解决方法；刚开始看到的好多都是怎么修改wp-content文件夹的权限问题，改成777或者755权限模式，然后再数据库里修改upload_path的值等。于是试着改了一下文件的权限，然后到数据库去看，没有找到upload_path，（后来找到了这个upload_path，翻了个页就找到了&gt;&lt;|||，当时也是醉了。）。
+</code></pre><p>纠结了很久，又继续摆弄，终于摆弄好了。下面是解决步骤：<br>1 首先，还没有在SAE创建Domain Storage的就先去新建一个，方法也很简单，进入SAE，进入你的应用，然后在左边服务管理下面找到Storage，接下来就是按照提示新建一个。<br>2 在应用根目录，创建sae.php；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/* 在SAE的Storage中新建的Domain名，比如“wordpress” */</div><div class="line">define(&apos;SAE_STORAGE&apos;,wordpress);</div><div class="line">/* 设置文件上传的路径和文件路径的URL，不要更改 */</div><div class="line">define(&apos;SAE_DIR&apos;, &apos;saestor://&apos;.SAE_STORAGE.&apos;/uploads&apos;);</div><div class="line">define(&apos;SAE_URL&apos;, &apos;http://&apos;.$_SERVER[&apos;HTTP_APPNAME&apos;].&apos;-&apos;.SAE_STORAGE.&apos;.stor.sinaapp.com/uploads&apos;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
+<p>2 修改wp-includes/functions.php文件<br>1）找到require( ABSPATH . WPINC . ‘/option.php’ );在这句前添加：<br>include( ABSPATH . ‘/sae.php’ );  //调用SAE的Storage文件域名设置  //for SAE；<br>2）然后注释掉如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//$wrapper = null;</div><div class="line">// strip the protocol</div><div class="line">//if( wp_is_stream( $target ) ) &#123;</div><div class="line">//    list( $wrapper, $target ) = explode( &apos;://&apos;, $target, 2 );</div><div class="line">//&#125;</div><div class="line">// from php.net/mkdir user contributed notes</div><div class="line">//$target = str_replace( &apos;//&apos;, &apos;/&apos;, $target );</div><div class="line">// put the wrapper back on the target</div><div class="line">//if( $wrapper !== null ) &#123;</div><div class="line">//    $target = $wrapper . &apos;://&apos; . $target;</div><div class="line">//&#125;</div></pre></td></tr></table></figure></p>
+<p>3）替换成如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//for SAE begin</div><div class="line">// from php.net/mkdir user contributed notes</div><div class="line">if ( substr($target, 0, 10) == &apos;saestor://&apos; ) &#123;</div><div class="line">return true;</div><div class="line">&#125;</div><div class="line">$target = str_replace( &apos;//&apos;, &apos;/&apos;, $target );</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
+<p>4）找到$basedir = $dir;<br>在前面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// for SAE begin</div><div class="line">$dir = SAE_DIR;</div><div class="line">$url = SAE_URL;</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
+<p>5）找到/<em>* </em> Send a HTTP header to limit rendering of pages to same origin iframes.<br>在前面添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// for SAE begin</div><div class="line">if ( !function_exists(&apos;utf8_encode&apos;) ) &#123;</div><div class="line">function utf8_encode($str) &#123;</div><div class="line">$encoding_in = mb_detect_encoding($str);</div><div class="line">return mb_convert_encoding($str, &apos;UTF-8&apos;, $encoding_in);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
+<p>到这里，function.php已经修改完毕；<br>最后，修改wp-admin/includes/file.php；<br>注释掉如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Set correct file permissions</div><div class="line">//$stat = stat( dirname( $new_file ));</div><div class="line">//$perms = $stat[&apos;mode&apos;] &amp; 0000666;</div><div class="line">//@ chmod( $new_file, $perms );</div></pre></td></tr></table></figure></p>
+<p>然后上传刷新，问题解决了。<br>（由于我在新建文件的时候将文件编码设置成了utf-8，导致后来出现了这个错误：<br>Warning: Cannot modify header information – headers already sent by (output started<br>at /data1/www/htdocs/469/linmeiqi/1/sae.php:1) in wp-admin/async-upload.php on line 38；<br>直接将sae.php用记事本打开，另存为的时候选择ANSI编码就可以了。）<br>原文链接：<a href="http://dimcutter.blog.163.com/blog/static/9309329620130713026450/" target="_blank" rel="external">http://dimcutter.blog.163.com/blog/static/9309329620130713026450/</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/08/07/编程是一门艺术/" itemprop="url">
                   编程是一门艺术
                 </a>
@@ -919,7 +1020,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">7</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
@@ -929,7 +1030,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
