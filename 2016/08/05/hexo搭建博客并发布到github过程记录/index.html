@@ -85,21 +85,18 @@
 
 
 <meta name="description" content="一、环境nodejsgit
-二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io
-三、创建本机的SSH和github配置SSH key是用来判断这个github push是否">
+二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo搭建博客并发布到github过程记录">
 <meta property="og:url" content="http://yoursite.com/2016/08/05/hexo搭建博客并发布到github过程记录/index.html">
 <meta property="og:site_name" content="会唱歌的🐒">
 <meta property="og:description" content="一、环境nodejsgit
-二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io
-三、创建本机的SSH和github配置SSH key是用来判断这个github push是否">
-<meta property="og:updated_time" content="2016-08-07T11:21:53.000Z">
+二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io">
+<meta property="og:updated_time" content="2016-08-07T11:26:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo搭建博客并发布到github过程记录">
 <meta name="twitter:description" content="一、环境nodejsgit
-二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io
-三、创建本机的SSH和github配置SSH key是用来判断这个github push是否">
+二、注册git，并新建repository这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：1username.github.io">
 
 
 
@@ -314,11 +311,12 @@
       
         <h3 id="一、环境"><a href="#一、环境" class="headerlink" title="一、环境"></a>一、环境</h3><p>nodejs<br>git</p>
 <h3 id="二、注册git，并新建repository"><a href="#二、注册git，并新建repository" class="headerlink" title="二、注册git，并新建repository"></a>二、注册git，并新建repository</h3><p>这里只有一点需要注意，我的github账号名是meiqi502，所以新建的repository名字应该是meiqi502.github.io（具体为什么等我搞懂了再来补充，现在先把流程记录）。就是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">username.github.io</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
 <h3 id="三、创建本机的SSH和github配置"><a href="#三、创建本机的SSH和github配置" class="headerlink" title="三、创建本机的SSH和github配置"></a>三、创建本机的SSH和github配置</h3><p>SSH key是用来判断这个github push是否是你本人操作的。每台设备有一个SSH。打开git bash，输入以下命令</p>
 <p>第1步：创建SSH Key</p>
 <p>$ ssh-keygen -t rsa -C “youremail@example.com”</p>
 <p>第2步：登陆GitHub，打开“Account settings”，“SSH Keys”页面：然后，点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容。</p>
-<p>第3步：Add Key<br><a id="more"></a></p>
+<p>第3步：Add Key</p>
 <h3 id="四、安装hexo"><a href="#四、安装hexo" class="headerlink" title="四、安装hexo"></a>四、安装hexo</h3><p>1、 打开git bash，输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install -g hexo // 全局安装hexo</div></pre></td></tr></table></figure></p>
 <p>2、 本地新建文件夹，比如新建hexo，路径为D：/hexo；<br>3、 进入D:/hexo，右键git bash，并输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init // 初始化hexo</div></pre></td></tr></table></figure></p>
 <p>这时候打开hexo文件夹会发现所有站点相关的文件都已经被下载下来。<br>输入命令：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">hexo g</div><div class="line">hexo s</div></pre></td></tr></table></figure></p>
