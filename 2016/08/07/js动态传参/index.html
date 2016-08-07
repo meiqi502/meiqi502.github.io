@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="js 动态传参," />
 
 
 
@@ -84,19 +84,19 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="description" content="总结一下目前需要动态传参的几种情况：1 obj.addEventListener()2 obj.setTimeOut()3 onclick = callback(“参数”);
+一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法： 1 用setAttribute()为元素增添属性，把要传递的参数赋给属性值；然后在所调用函数中加事件参数，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2016/08/04/hello-world/index.html">
+<meta property="og:title" content="js动态传参">
+<meta property="og:url" content="http://yoursite.com/2016/08/07/js动态传参/index.html">
 <meta property="og:site_name" content="会唱歌的🐒">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
-<meta property="og:updated_time" content="2016-08-06T06:25:20.000Z">
+<meta property="og:description" content="总结一下目前需要动态传参的几种情况：1 obj.addEventListener()2 obj.setTimeOut()3 onclick = callback(“参数”);
+一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法： 1 用setAttribute()为元素增添属性，把要传递的参数赋给属性值；然后在所调用函数中加事件参数，">
+<meta property="og:updated_time" content="2016-08-07T06:41:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick">
+<meta name="twitter:title" content="js动态传参">
+<meta name="twitter:description" content="总结一下目前需要动态传参的几种情况：1 obj.addEventListener()2 obj.setTimeOut()3 onclick = callback(“参数”);
+一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法： 1 用setAttribute()为元素增添属性，把要传递的参数赋给属性值；然后在所调用函数中加事件参数，">
 
 
 
@@ -117,9 +117,9 @@ Quick">
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/04/hello-world/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/07/js动态传参/"/>
 
-  <title> Hello World | 会唱歌的🐒 </title>
+  <title> js动态传参 | 会唱歌的🐒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -269,7 +269,7 @@ Quick">
             
             
               
-                Hello World
+                js动态传参
               
             
           </h1>
@@ -281,8 +281,8 @@ Quick">
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-08-04T00:00:00+08:00" content="2016-08-04">
-              2016-08-04
+            <time itemprop="dateCreated" datetime="2016-08-07T14:24:34+08:00" content="2016-08-07">
+              2016-08-07
             </time>
           </span>
 
@@ -309,15 +309,13 @@ Quick">
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <h2 id="总结一下目前需要动态传参的几种情况："><a href="#总结一下目前需要动态传参的几种情况：" class="headerlink" title="总结一下目前需要动态传参的几种情况："></a>总结一下目前需要动态传参的几种情况：</h2><p>1 obj.addEventListener()<br>2 obj.setTimeOut()<br>3 onclick = callback(“参数”);</p>
+<h3 id="一、首先，addEventListener-方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法："><a href="#一、首先，addEventListener-方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法：" class="headerlink" title="一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法："></a>一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法：</h3><p> 1 用setAttribute()为元素增添属性，把要传递的参数赋给属性值；然后在所调用函数中加事件参数，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">deleteTaskk = document.createElement(&quot;a&quot;);</div><div class="line">ii=&quot;3&quot;;</div><div class="line">color=&quot;red&quot;</div><div class="line">deleteTaskk.setAttribute(&quot;moto&quot;, ii);</div><div class="line">deleteTaskk.setAttribute(&quot;color&quot;, color);</div><div class="line">deleteTaskk.addEventListener(&quot;click&quot;, deleteTaskCookie, false);</div><div class="line">document.appendChild(deleteTaskk);</div><div class="line"></div><div class="line">function deleteTaskCookie(e)&#123;//e是事件对象，使用e.target既定义对象，又可以得到触发本事件的元素。</div><div class="line">    mycase=e.target</div><div class="line">    ii=mycase.getAttribute(&quot;moto&quot;);</div><div class="line">    color=mycase.getAttribute(&quot;color&quot;);</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>2 直接让addEventListener调用带参数的函数，然后在所调用函数中返回匿名函数。如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">deleteTaskk = document.createElement(&quot;a&quot;);</div><div class="line">ii=&quot;3&quot;;</div><div class="line">color=&quot;red&quot;</div><div class="line">deleteTaskk.addEventListener(&quot;click&quot;, deleteTaskCookie(ii,color), false);</div><div class="line">document.appendChild(deleteTaskk);</div><div class="line"></div><div class="line">function deleteTaskCookie(i,colo)&#123;</div><div class="line">    return function()&#123;</div><div class="line">    XXXXX(i)</div><div class="line">    XXXXXX(colo)</div><div class="line">    ...</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="二、setTimeOut-动态传参的方法有以下三种："><a href="#二、setTimeOut-动态传参的方法有以下三种：" class="headerlink" title="二、setTimeOut()动态传参的方法有以下三种："></a>二、setTimeOut()动态传参的方法有以下三种：</h3><p>1 采用字符串形式：——（缺陷）参数不能被周期性改变。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">setInterval(&quot;foo(id)&quot;,1000);</div></pre></td></tr></table></figure></p>
+<p>2 匿名函数包装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.setInterval(function()&#123;foo (id);&#125;, 1000);</div></pre></td></tr></table></figure></p>
+<p>3 定义返回无参函数的函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function foo(id)</div><div class="line">&#123;</div><div class="line">   alert(id);</div><div class="line">&#125;</div><div class="line">function _foo(id)&#123;</div><div class="line">    return function()&#123;</div><div class="line">    foo(id);</div><div class="line">    &#125;  </div><div class="line">&#125;</div><div class="line">window.setInterval(_foo(id),1000);</div></pre></td></tr></table></figure></p>
+<p>三、在《javascript DOM 编程艺术》里面解释了，第三种情况，因为我们是要将一个函数对象赋值给事件onclick而不是将函数的执行结果赋值。onclick = callback；这是将函数对象本身赋值给左边，而onclick = callback()则是将执行结果赋值给左边。所以正确的写法是：onclick = callback；但是当我们需要在callback函数中传入参数怎么办？这时候onclick = callback(“参数”)是错误的。因此借助匿名函数，我们可以这样写：<br>onclick = function(){callback(“参数”)};</p>
 
       
     </div>
@@ -338,18 +336,24 @@ Quick">
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/js-动态传参/" rel="tag">#js 动态传参</a>
+          
+        </div>
+      
 
       
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/08/05/hexo搭建博客并发布到github过程记录/" rel="next" title="hexo搭建博客并发布到github过程记录">
+                <i class="fa fa-chevron-left"></i> hexo搭建博客并发布到github过程记录
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/08/05/hexo搭建博客并发布到github过程记录/" rel="prev" title="hexo搭建博客并发布到github过程记录">
-                hexo搭建博客并发布到github过程记录 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -498,7 +502,7 @@ Quick">
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结一下目前需要动态传参的几种情况："><span class="nav-number">1.</span> <span class="nav-text">总结一下目前需要动态传参的几种情况：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、首先，addEventListener-方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法："><span class="nav-number">1.1.</span> <span class="nav-text">一、首先，addEventListener()方法调用的函数也是不能直接带参数的，如果需要传入参数，可以有以下方法：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、setTimeOut-动态传参的方法有以下三种："><span class="nav-number">1.2.</span> <span class="nav-text">二、setTimeOut()动态传参的方法有以下三种：</span></a></li></ol></li></ol></div>
             
           </div>
         </section>
