@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="transition transform animate," />
 
 
 
@@ -84,15 +84,22 @@
 
 
 
-<meta name="description" content="追求极致">
-<meta property="og:type" content="website">
-<meta property="og:title" content="会唱歌的🐒">
-<meta property="og:url" content="http://yoursite.com/tags/SAE-写权限/index.html">
+<meta name="description" content="方案一：animateZepto中的动画引用了fx.js动画库，它的animate实现基于css动画。并且animate提供回调函数接口，在动画执行完毕后再执行别的操作。
+方案二：css3 的transition另一种方法是直接使用css3的transition，由于之前只是笼统的觉得js动画肯定比css3动画的性能要差，所以首先使用了该方法。该方法没有提供回调函数的接口，需要去额外监听trans">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动画方案总结">
+<meta property="og:url" content="http://yoursite.com/2017/08/06/双周报动画方案/index.html">
 <meta property="og:site_name" content="会唱歌的🐒">
-<meta property="og:description" content="追求极致">
+<meta property="og:description" content="方案一：animateZepto中的动画引用了fx.js动画库，它的animate实现基于css动画。并且animate提供回调函数接口，在动画执行完毕后再执行别的操作。
+方案二：css3 的transition另一种方法是直接使用css3的transition，由于之前只是笼统的觉得js动画肯定比css3动画的性能要差，所以首先使用了该方法。该方法没有提供回调函数的接口，需要去额外监听trans">
+<meta property="og:image" content="http://yoursite.com/images/myPic/animate.png">
+<meta property="og:image" content="http://yoursite.com/images/myPic/transition.png">
+<meta property="og:updated_time" content="2017-08-06T11:52:39.255Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="会唱歌的🐒">
-<meta name="twitter:description" content="追求极致">
+<meta name="twitter:title" content="动画方案总结">
+<meta name="twitter:description" content="方案一：animateZepto中的动画引用了fx.js动画库，它的animate实现基于css动画。并且animate提供回调函数接口，在动画执行完毕后再执行别的操作。
+方案二：css3 的transition另一种方法是直接使用css3的transition，由于之前只是笼统的觉得js动画肯定比css3动画的性能要差，所以首先使用了该方法。该方法没有提供回调函数的接口，需要去额外监听trans">
+<meta name="twitter:image" content="http://yoursite.com/images/myPic/animate.png">
 
 
 
@@ -113,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/SAE-写权限/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/06/双周报动画方案/"/>
 
-  <title> 标签: SAE 写权限 | 会唱歌的🐒 </title>
+  <title> 动画方案总结 | 会唱歌的🐒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -136,7 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -244,46 +251,124 @@
           <div id="content" class="content">
             
 
-  <div id="posts" class="posts-collapse">
-    <div class="collection-title">
-      <h2 >
-        SAE 写权限
-        <small>标签</small>
-      </h2>
-    </div>
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                动画方案总结
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2017-08-06T19:48:20+08:00" content="2017-08-06">
+              2017-08-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
       
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+      
+        <h3 id="方案一：animate"><a href="#方案一：animate" class="headerlink" title="方案一：animate"></a>方案一：animate</h3><p>Zepto中的动画引用了fx.js动画库，它的animate实现基于css动画。并且animate提供回调函数接口，在动画执行完毕后再执行别的操作。<br><img src="images/myPic/animate.png" alt="img"></p>
+<h3 id="方案二：css3-的transition"><a href="#方案二：css3-的transition" class="headerlink" title="方案二：css3 的transition"></a>方案二：css3 的transition</h3><p>另一种方法是直接使用css3的transition，由于之前只是笼统的觉得js动画肯定比css3动画的性能要差，所以首先使用了该方法。该方法没有提供回调函数的接口，需要去额外监听transitionend事件，并且该事件在各个浏览器下的名字的前缀还不一样，所以需要做兼容处理。<br><img src="images/myPic/transition.png" alt="img"><br>嗯、、、、光看代码量还是方案一的要清爽一些，那么性能上呢？今天认（装）真（逼）的使用devtool工具做了一会性能分析，发现loop函数在两种方案下的运行时间占比是方案一少于方案二，。后面再去结合fx的代码，发现animate的实现完全是基于css3的方法，而且其提供的回调函数也是基于监听transitionend和animationend实现的。所以最后放心的采用了方案一做动画。</p>
+<p>参考：<br>Fx动画库：<a href="https://gist.github.com/asha23/6796784" target="_blank" rel="external">https://gist.github.com/asha23/6796784</a><br><a href="http://wnworld.com/archives/191.html" target="_blank" rel="external">http://wnworld.com/archives/191.html</a><br><a href="http://zencode.in/18.CSS-animation%E5%92%8Ctransition%E7%9A%84%E6%80%A7%E8%83%BD%E6%8E%A2%E7%A9%B6.html" target="_blank" rel="external">http://zencode.in/18.CSS-animation%E5%92%8Ctransition%E7%9A%84%E6%80%A7%E8%83%BD%E6%8E%A2%E7%A9%B6.html</a></p>
 
-      <h1 class="post-title">
+      
+    </div>
+
+    <div>
+      
         
-            <a class="post-title-link" href="/2015/08/07/解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限/" itemprop="url">
-              
-                <span itemprop="name">解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限</span>
-              
-            </a>
+
+      
+    </div>
+
+    <div>
+      
         
-      </h1>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2015-08-07T17:37:30+08:00"
-              content="2015-08-07" >
-          08-07
-        </time>
-      </div>
+      
+    </div>
 
-    </header>
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/transition-transform-animate/" rel="tag">#transition transform animate</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/05/hexo搭建博客并发布到github过程记录/" rel="next" title="hexo搭建博客并发布到github过程记录">
+                <i class="fa fa-chevron-left"></i> hexo搭建博客并发布到github过程记录
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
-    
-  </div>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -291,6 +376,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -310,8 +399,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/me.jpg"
@@ -396,6 +494,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#方案一：animate"><span class="nav-number">1.</span> <span class="nav-text">方案一：animate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方案二：css3-的transition"><span class="nav-number">2.</span> <span class="nav-text">方案二：css3 的transition</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -492,6 +601,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
