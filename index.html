@@ -316,9 +316,7 @@
 </blockquote>
 <h4 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h4><p>大家熟悉的编码比如UTF-8、UTF-16、UTF-32、ASCII、unicode等，后面还会出现一个不长听到的编码USC-2。首先介绍unicode编码。</p>
 <h5 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h5><p>ASCII是最开始美国人指定的一个编码规范，它用一个字节即8位（bit）来表示常见的英文字符，包括大小写英文字母和数字等一共128个字符。这128个字符的编码范围是00000000-01111111。详情查看<a href="http://www.asciitable.com/">ASCII编码</a>。</p>
-<p>后来文字的种类越来越多，每个国家都有自己的文字，ASCII的8位长度不足以定义那么多文字，而且每种文字都采用ASCII编码的话，会导致同一个ASCII对应的符号会不一样。因此后来的Unicode团队决定开发一套统一标准的编码，就是unicode编码。</p>
-<p>unicode编码是一个庞大的集合，里面每个符号都是对应惟一一个编码。unicode为每个符号指定一个编号，称为码点。码点采用的是十六进制的编码，比如中文的美字的码点就是7F8E，一般unicode的写法是\u+码点或者U+码点。美的unicode码点是\u7F8E或者U+7F8E。<br>刚才说了unicode是一个庞大的集合，目前的Unicode字符分为17组编排，每组称为平面（Plane），而每平面拥有65536（即216）个代码点。然而目前只用了少数平面。下图是从维基百科上获取的表格。维基<a href="https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84">Unicode字符平面映射</a>。<br><img src="../../public/images/myPic/piangmian.png" alt="img">;<br>其中基本多文种平面（BMP）是最开始建立的一个区，包含了我们经常使用的字符。其中中日韩三国文字（CJK）就包括在内。其中常用的汉字所在区间为U+4E00 - U+9FFF，可以从<a href="https://codepoints.net/basic_multilingual_plane">网站</a>查询到指定字符对应的码点。</p>
-<p>unicode从1991年10月发布1.0开始，到现在已经经历了很长时间，并且其字符集一直在增加。2017年6月刚刚发布了最新的一期，10.0版。<br>
+<p>后来文字的种类越来越多，每个国家都有自己的文字，ASCII的8位长度不足以定义那么多文字，而且每种文字都采用ASCII编码的话，会导致同一个ASCII对应的符号会不一样。因此后来的Unicode团队决定开发一套统一标准的编码，就是unicode编码。<br>
           <div class="post-more-link text-center">
             <a class="btn" href="/2017/08/21/emoji和编码的问题/#more" rel="contents">
               阅读全文 &raquo;
