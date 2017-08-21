@@ -97,7 +97,7 @@ unicode编码ASCII是最开始美国人指定的一个编码规范，它用一�
 编码大家熟悉的编码比如UTF-8、UTF-16、UTF-32、ASCII、unicode等，后面还会出现一个不长听到的编码USC-2。首先介绍unicode编码。
 unicode编码ASCII是最开始美国人指定的一个编码规范，它用一个字节即8位（bit）来表示常见的英文字符，包括大小">
 <meta property="og:image" content="http://yoursite.com/../../public/images/myPic/piangmian.png">
-<meta property="og:updated_time" content="2017-08-21T13:45:10.135Z">
+<meta property="og:updated_time" content="2017-08-21T13:46:23.494Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="emoji和编码相关">
 <meta name="twitter:description" content="序：这几天一直在研究emoji，所谓的绘文字。连带着把编码相关的知识也一起补了一遍，记录一下自己学到的东西。
@@ -324,7 +324,7 @@ unicode编码ASCII是最开始美国人指定的一个编码规范，它用一�
 <h5 id="unicode编码"><a href="#unicode编码" class="headerlink" title="unicode编码"></a>unicode编码</h5><p>ASCII是最开始美国人指定的一个编码规范，它用一个字节即8位（bit）来表示常见的英文字符，包括大小写英文字母和数字等一共128个字符。这128个字符的编码范围是00000000-01111111。详情查看<a href="http://www.asciitable.com/" target="_blank" rel="external">ASCII编码</a>。</p>
 <p>后来文字的种类越来越多，每个国家都有自己的文字，ASCII的8位长度不足以定义那么多文字，而且每种文字都采用ASCII编码的话，会导致同一个ASCII对应的符号会不一样。因此后来的Unicode团队决定开发一套统一标准的编码，就是unicode编码。</p>
 <p>unicode编码是一个庞大的集合，里面每个符号都是对应惟一一个编码。unicode为每个符号指定一个编号，称为码点。码点采用的是十六进制的编码，比如中文的美字的码点就是7F8E，一般unicode的写法是\u+码点或者U+码点。美的unicode码点是\u7F8E或者U+7F8E。<br>刚才说了unicode是一个庞大的集合，目前的Unicode字符分为17组编排，每组称为平面（Plane），而每平面拥有65536（即216）个代码点。然而目前只用了少数平面。下图是从维基百科上获取的表格。维基<a href="https://zh.wikipedia.org/wiki/Unicode%E5%AD%97%E7%AC%A6%E5%B9%B3%E9%9D%A2%E6%98%A0%E5%B0%84" target="_blank" rel="external">Unicode字符平面映射</a>。<br><img src="../../public/images/myPic/piangmian.png" alt="img">;<br>其中基本多文种平面（BMP）是最开始建立的一个区，包含了我们经常使用的字符。其中中日韩三国文字（CJK）就包括在内。其中常用的汉字所在区间为U+4E00 - U+9FFF，可以从<a href="https://codepoints.net/basic_multilingual_plane" target="_blank" rel="external">网站</a>查询到指定字符对应的码点。</p>
-<p>unicode从1991年10月发布1.0开始，到现在已经经历了很长时间，并且其字符集一直在增加。2017年6月刚刚发布了最新的一期，10.0版。</p>
+<p>unicode从1991年10月发布1.0开始，到现在已经经历了很长时间，并且其字符集一直在增加。2017年6月刚刚发布了最新的一期，10.0版。<br><a id="more"></a></p>
 <h5 id="unicode编码方式"><a href="#unicode编码方式" class="headerlink" title="unicode编码方式"></a>unicode编码方式</h5><p>Unidcode的编码方式与ISO 10646的通用字符集概念相对应。目前实际应用的统一码版本对应于UCS-2，使用16位的编码空间。也就是每个字符占用2个字节。这样理论上一共最多可以表示2^16（即65536）个字符。基本满足各种语言的使用。实际上当前版本的统一码并未完全使用这16位编码，而是保留了大量空间以作为特殊使用或将来扩展。后面讲的代理对（surrogate pair）就是使用了BMP中的一个区间来表示高位，因为unicode有些字符采用2字节，有些又采用4字节，那么问题来了，计算机如何判断当前的2字节是一个字符还是应该和后两个字节一起组成字符呢，所以在BMP预留的一段区间U+D800到U+DBFF不指定任何字符的编码，用来辅助完成辅助平面内字符的编码。</p>
 <p>上述16位统一码字符构成基本多文种平面。最新（但未实际广泛使用）的统一码版本定义了16个辅助平面，两者合起来至少需要占据21位的编码空间，比3字节略少。但事实上辅助平面字符仍然占用4字节编码空间，与UCS-4保持一致。未来版本会扩充到ISO 10646-1实现级别3，即涵盖UCS-4的所有字符。UCS-4是一个更大的尚未填充完全的31位字符集，加上恒为0的首位，共需占据32位，即4字节。理论上最多能表示231个字符，完全可以涵盖一切语言所用的符号。</p>
 <p>基本多文种平面的字符的编码为U+hhhh，其中每个h代表一个十六进制数字，与UCS-2编码完全相同。而其对应的4字节UCS-4编码后两个字节一致，前两个字节则所有位均为0。</p>
