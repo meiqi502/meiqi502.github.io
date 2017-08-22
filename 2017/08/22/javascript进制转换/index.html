@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="SAE 写权限," />
+  <meta name="keywords" content="parseInt toString charCodeAt codePointAt fromCharCode fromCodePoint," />
 
 
 
@@ -84,16 +84,37 @@
 
 
 
-<meta name="description" content="初学wordpress，憧憬着给自己建一个漂亮的个人博客；于是在SAE上申请了个域名，就把wordpress4.0搭建上去了，通过SVN将主题上传后就开始琢磨着写点文章加点图片啥的，然后问题就来了。想在wordpress后台添加图片的时候，报错：“无法建立目录 wp-content/uploads/2014/11。有没有上级目录的写权限？”于是就去百度解决方法；刚开始看到的好多都是怎么修改wp-c">
+<meta name="description" content="在javascript中，parseInt和toString用来转换进制，其中parseInt是传入一个字符串，并指定该字符串中的数字采用了什么进制，最后返回转换成了10进制的整形数字，如果传入的字符串无法转换，则返回NAN。
+parseInt 其他进制转成10进制
+参数：
+
+
+string
+
+要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用  ToString 抽象操作)。字符串开">
 <meta property="og:type" content="article">
-<meta property="og:title" content="解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限">
-<meta property="og:url" content="http://yoursite.com/2015/08/07/解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限/index.html">
+<meta property="og:title" content="javascript进制转换">
+<meta property="og:url" content="http://yoursite.com/2017/08/22/javascript进制转换/index.html">
 <meta property="og:site_name" content="会唱歌的🐒">
-<meta property="og:description" content="初学wordpress，憧憬着给自己建一个漂亮的个人博客；于是在SAE上申请了个域名，就把wordpress4.0搭建上去了，通过SVN将主题上传后就开始琢磨着写点文章加点图片啥的，然后问题就来了。想在wordpress后台添加图片的时候，报错：“无法建立目录 wp-content/uploads/2014/11。有没有上级目录的写权限？”于是就去百度解决方法；刚开始看到的好多都是怎么修改wp-c">
-<meta property="og:updated_time" content="2016-08-07T11:35:12.000Z">
+<meta property="og:description" content="在javascript中，parseInt和toString用来转换进制，其中parseInt是传入一个字符串，并指定该字符串中的数字采用了什么进制，最后返回转换成了10进制的整形数字，如果传入的字符串无法转换，则返回NAN。
+parseInt 其他进制转成10进制
+参数：
+
+
+string
+
+要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用  ToString 抽象操作)。字符串开">
+<meta property="og:updated_time" content="2017-08-22T05:05:10.301Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限">
-<meta name="twitter:description" content="初学wordpress，憧憬着给自己建一个漂亮的个人博客；于是在SAE上申请了个域名，就把wordpress4.0搭建上去了，通过SVN将主题上传后就开始琢磨着写点文章加点图片啥的，然后问题就来了。想在wordpress后台添加图片的时候，报错：“无法建立目录 wp-content/uploads/2014/11。有没有上级目录的写权限？”于是就去百度解决方法；刚开始看到的好多都是怎么修改wp-c">
+<meta name="twitter:title" content="javascript进制转换">
+<meta name="twitter:description" content="在javascript中，parseInt和toString用来转换进制，其中parseInt是传入一个字符串，并指定该字符串中的数字采用了什么进制，最后返回转换成了10进制的整形数字，如果传入的字符串无法转换，则返回NAN。
+parseInt 其他进制转成10进制
+参数：
+
+
+string
+
+要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用  ToString 抽象操作)。字符串开">
 
 
 
@@ -114,9 +135,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2015/08/07/解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/22/javascript进制转换/"/>
 
-  <title> 解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限 | 会唱歌的🐒 </title>
+  <title> javascript进制转换 | 会唱歌的🐒 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -266,7 +287,7 @@
             
             
               
-                解决办法：在SAE平台上，无法建立目录，没有上级目录的写权限
+                javascript进制转换
               
             
           </h1>
@@ -278,8 +299,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2015-08-07T17:37:30+08:00" content="2015-08-07">
-              2015-08-07
+            <time itemprop="dateCreated" datetime="2017-08-22T13:03:20+08:00" content="2017-08-22">
+              2017-08-22
             </time>
           </span>
 
@@ -306,15 +327,55 @@
       
 
       
-        <pre><code>初学wordpress，憧憬着给自己建一个漂亮的个人博客；于是在SAE上申请了个域名，就把wordpress4.0搭建上去了，通过SVN将主题上传后就开始琢磨着写点文章加点图片啥的，然后问题就来了。想在wordpress后台添加图片的时候，报错：“无法建立目录 wp-content/uploads/2014/11。有没有上级目录的写权限？”于是就去百度解决方法；刚开始看到的好多都是怎么修改wp-content文件夹的权限问题，改成777或者755权限模式，然后再数据库里修改upload_path的值等。于是试着改了一下文件的权限，然后到数据库去看，没有找到upload_path，（后来找到了这个upload_path，翻了个页就找到了&gt;&lt;|||，当时也是醉了。）。
-</code></pre><p>纠结了很久，又继续摆弄，终于摆弄好了。下面是解决步骤：<br>1 首先，还没有在SAE创建Domain Storage的就先去新建一个，方法也很简单，进入SAE，进入你的应用，然后在左边服务管理下面找到Storage，接下来就是按照提示新建一个。<br>2 在应用根目录，创建sae.php；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;?php</div><div class="line">/* 在SAE的Storage中新建的Domain名，比如“wordpress” */</div><div class="line">define(&apos;SAE_STORAGE&apos;,wordpress);</div><div class="line">/* 设置文件上传的路径和文件路径的URL，不要更改 */</div><div class="line">define(&apos;SAE_DIR&apos;, &apos;saestor://&apos;.SAE_STORAGE.&apos;/uploads&apos;);</div><div class="line">define(&apos;SAE_URL&apos;, &apos;http://&apos;.$_SERVER[&apos;HTTP_APPNAME&apos;].&apos;-&apos;.SAE_STORAGE.&apos;.stor.sinaapp.com/uploads&apos;);</div><div class="line">?&gt;</div></pre></td></tr></table></figure></p>
-<a id="more"></a>
-<p>2 修改wp-includes/functions.php文件<br>1）找到require( ABSPATH . WPINC . ‘/option.php’ );在这句前添加：<br>include( ABSPATH . ‘/sae.php’ );  //调用SAE的Storage文件域名设置  //for SAE；<br>2）然后注释掉如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//$wrapper = null;</div><div class="line">// strip the protocol</div><div class="line">//if( wp_is_stream( $target ) ) &#123;</div><div class="line">//    list( $wrapper, $target ) = explode( &apos;://&apos;, $target, 2 );</div><div class="line">//&#125;</div><div class="line">// from php.net/mkdir user contributed notes</div><div class="line">//$target = str_replace( &apos;//&apos;, &apos;/&apos;, $target );</div><div class="line">// put the wrapper back on the target</div><div class="line">//if( $wrapper !== null ) &#123;</div><div class="line">//    $target = $wrapper . &apos;://&apos; . $target;</div><div class="line">//&#125;</div></pre></td></tr></table></figure></p>
-<p>3）替换成如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">//for SAE begin</div><div class="line">// from php.net/mkdir user contributed notes</div><div class="line">if ( substr($target, 0, 10) == &apos;saestor://&apos; ) &#123;</div><div class="line">return true;</div><div class="line">&#125;</div><div class="line">$target = str_replace( &apos;//&apos;, &apos;/&apos;, $target );</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
-<p>4）找到$basedir = $dir;<br>在前面添加<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// for SAE begin</div><div class="line">$dir = SAE_DIR;</div><div class="line">$url = SAE_URL;</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
-<p>5）找到/<em>* </em> Send a HTTP header to limit rendering of pages to same origin iframes.<br>在前面添加：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">// for SAE begin</div><div class="line">if ( !function_exists(&apos;utf8_encode&apos;) ) &#123;</div><div class="line">function utf8_encode($str) &#123;</div><div class="line">$encoding_in = mb_detect_encoding($str);</div><div class="line">return mb_convert_encoding($str, &apos;UTF-8&apos;, $encoding_in);</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line">//for SAE end</div></pre></td></tr></table></figure></p>
-<p>到这里，function.php已经修改完毕；<br>最后，修改wp-admin/includes/file.php；<br>注释掉如下代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// Set correct file permissions</div><div class="line">//$stat = stat( dirname( $new_file ));</div><div class="line">//$perms = $stat[&apos;mode&apos;] &amp; 0000666;</div><div class="line">//@ chmod( $new_file, $perms );</div></pre></td></tr></table></figure></p>
-<p>然后上传刷新，问题解决了。<br>（由于我在新建文件的时候将文件编码设置成了utf-8，导致后来出现了这个错误：<br>Warning: Cannot modify header information – headers already sent by (output started<br>at /data1/www/htdocs/469/linmeiqi/1/sae.php:1) in wp-admin/async-upload.php on line 38；<br>直接将sae.php用记事本打开，另存为的时候选择ANSI编码就可以了。）<br>原文链接：<a href="http://dimcutter.blog.163.com/blog/static/9309329620130713026450/" target="_blank" rel="external">http://dimcutter.blog.163.com/blog/static/9309329620130713026450/</a></p>
+        <p>在javascript中，parseInt和toString用来转换进制，其中parseInt是传入一个字符串，并指定该字符串中的数字采用了什么进制，最后返回转换成了10进制的整形数字，如果传入的字符串无法转换，则返回NAN。</p>
+<h4 id="parseInt-其他进制转成10进制"><a href="#parseInt-其他进制转成10进制" class="headerlink" title="parseInt 其他进制转成10进制"></a>parseInt 其他进制转成10进制</h4><ol>
+<li>参数：</li>
+</ol>
+<ul>
+<li>string</li>
+</ul>
+<p>要被解析的值。如果参数不是一个字符串，则将其转换为字符串(使用  ToString 抽象操作)。字符串开头的空白符将会被忽略。</p>
+<ul>
+<li>radix</li>
+</ul>
+<p>一个介于2和36之间的整数(数学系统的基础)，表示上述字符串的基数。比如参数”10”表示使用我们通常使用的十进制数值系统。始终指定此参数可以消除阅读该代码时的困惑并且保证转换结果可预测。当未指定基数时，不同的实现会产生不同的结果，通常将值默认为10。</p>
+<ol>
+<li>返回值</li>
+</ol>
+<p>返回解析后的整数值。 如果被解析参数的第一个字符无法被转化成数值类型，则返回 NaN。</p>
+<h4 id="parseInt什么时候返回NAN"><a href="#parseInt什么时候返回NAN" class="headerlink" title="parseInt什么时候返回NAN"></a>parseInt什么时候返回NAN</h4><ol>
+<li>parseInt的第二个参数规定传入一个介于2和36之间的整数(数学系统的基础)，如果传入此区间之外的数值，函数会返回NAN。</li>
+<li>当parseInt(‘0x’, 16)也会返回NAN。</li>
+<li>如果第一个字符不能被转换成数字，parseInt返回NaN。</li>
+</ol>
+<h4 id="parseInt的一些解析规则："><a href="#parseInt的一些解析规则：" class="headerlink" title="parseInt的一些解析规则："></a>parseInt的一些解析规则：</h4><p>++如果 parseInt 遇到了不属于radix参数所指定的基数中的字符那么该字符和其后的字符都将被忽略。接着返回已经解析的整数部分。parseInt 将截取整数部分。开头和结尾的空白符允许存在，会被忽略。++</p>
+<p>在没有指定基数，或者基数为 0 的情况下，JavaScript 作如下处理：</p>
+<ul>
+<li>如果字符串 string 以”0x”或者”0X”开头, 则基数是16 (16进制).</li>
+<li><p>如果字符串 string 以”0”开头，基数是8（八进制）或者10（十进制），那么具体是哪个基数由实现环境决定。ECMAScript 5 规定使用10，但是并不是所有的浏览器都遵循这个规定。因此，永远都要明确给出radix参数的值。(目前知道的，在小木下，以0开头的字符串使用parseInt时，如果不指定radis，则以8进制解析。)</p>
+</li>
+<li><p>如果字符串 string 以其它任何值开头，则基数是10 (十进制)。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;0x110&apos;, 16);  //272</div><div class="line"></div><div class="line">parseInt(&apos;0110&apos;, 8);  //72</div><div class="line"></div><div class="line">parseInt(&apos;0110&apos;, 10);  //110</div><div class="line"></div><div class="line">parseInt(&apos;0x110&apos;, 8);   //除了传入16或者不传，传入其他返回都为0.</div></pre></td></tr></table></figure>
+<h4 id="toString-十进制转成其他进制"><a href="#toString-十进制转成其他进制" class="headerlink" title="toString 十进制转成其他进制"></a>toString 十进制转成其他进制</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">(72).toString(8); //110 转成8进制</div></pre></td></tr></table></figure>
+<h4 id="将字符转成unicode"><a href="#将字符转成unicode" class="headerlink" title="将字符转成unicode"></a>将字符转成unicode</h4><ul>
+<li>StringObject.charCodeAt() 返回0-65535内的整数（字符对应的10进制值），如果unicode的值超出0x10000，则返回代理对的高位，即左数第一位。</li>
+<li>StringObject.codePointAt() unicode的值超出0x10000的字符，也能够正确返回它的10进制值。</li>
+</ul>
+<p>💩的unicode编码是\u1f4a9<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var a = &quot;💩&quot;.charCodeAt(0);</div><div class="line">console.log(a);</div><div class="line">console.log(a.toString(16));</div><div class="line"></div><div class="line">var b = &quot;💩&quot;.codePointAt(0);</div><div class="line">console.log(b);</div><div class="line">console.log(b.toString(16));</div><div class="line"></div><div class="line">运行结果：</div><div class="line">55357</div><div class="line">&quot;d83d&quot;</div><div class="line">128169</div><div class="line">&quot;1f4a9&quot;</div></pre></td></tr></table></figure></p>
+<p>导致这个差异的原因是javascript采用的是USC编码，采用2个字节表示在0-65535范围内的字符。而超出范围的则需要使用代理对表示，这时是4个字节。而charCodeAt只能返回0-65535范围的整数。</p>
+<p>来自MDN：</p>
+<blockquote>
+<p>charCodeAt() 方法返回0到65535之间的整数，表示给定索引处的UTF-16代码单元 (在 Unicode 编码单元表示一个单一的 UTF-16 编码单元的情况下，UTF-16 编码单元匹配 Unicode 编码单元。但在——例如 Unicode 编码单元 &gt; 0x10000 的这种——不能被一个 UTF-16 编码单元单独表示的情况下，只能匹配 Unicode 代理对的第一个编码单元) 。如果你想要整个代码点的值，使用 codePointAt()。</p>
+</blockquote>
+<h4 id="将unicode转成字符"><a href="#将unicode转成字符" class="headerlink" title="将unicode转成字符"></a>将unicode转成字符</h4><ul>
+<li>String.fromCharCode()</li>
+<li>String.fromCodePoint()</li>
+</ul>
+<p>分别对应于以上的两个方法，下面是两个函数的用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a = String.fromCharCode(128169);</div><div class="line">console.log(a);</div><div class="line"></div><div class="line">var b =String.fromCodePoint(128169);</div><div class="line">console.log(b);</div><div class="line"></div><div class="line">运行结果：</div><div class="line">&quot;&quot;</div><div class="line">&quot;💩&quot;</div></pre></td></tr></table></figure>
+<p>同样是存在和上面一样的问题，所以如果需要类似操作的时候，最好使用charCodeAt和fromCodePoint。这是ES6的新函数。</p>
 
       
     </div>
@@ -337,7 +398,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SAE-写权限/" rel="tag">#SAE 写权限</a>
+            <a href="/tags/parseInt-toString-charCodeAt-codePointAt-fromCharCode-fromCodePoint/" rel="tag">#parseInt toString charCodeAt codePointAt fromCharCode fromCodePoint</a>
           
         </div>
       
@@ -346,17 +407,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/07/编程是一门艺术/" rel="next" title="编程是一门艺术">
-                <i class="fa fa-chevron-left"></i> 编程是一门艺术
+              <a href="/2017/08/21/emoji和编码的问题/" rel="next" title="emoji和编码相关">
+                <i class="fa fa-chevron-left"></i> emoji和编码相关
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/08/07/AI制作文字填充效果/" rel="prev" title="AI制作文字填充效果">
-                AI制作文字填充效果 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -505,7 +562,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#parseInt-其他进制转成10进制"><span class="nav-number">1.</span> <span class="nav-text">parseInt 其他进制转成10进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parseInt什么时候返回NAN"><span class="nav-number">2.</span> <span class="nav-text">parseInt什么时候返回NAN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#parseInt的一些解析规则："><span class="nav-number">3.</span> <span class="nav-text">parseInt的一些解析规则：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#toString-十进制转成其他进制"><span class="nav-number">4.</span> <span class="nav-text">toString 十进制转成其他进制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将字符转成unicode"><span class="nav-number">5.</span> <span class="nav-text">将字符转成unicode</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将unicode转成字符"><span class="nav-number">6.</span> <span class="nav-text">将unicode转成字符</span></a></li></ol></div>
             
           </div>
         </section>
